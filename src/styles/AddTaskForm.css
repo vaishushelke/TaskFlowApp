@@ -1,0 +1,150 @@
+.add-task-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(254, 243, 226, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1060;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.add-task-card {
+  width: min(100%, 560px);
+  background: #FEF3E2;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  padding: 2rem;
+  animation: modalSlideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.add-task-title {
+  font-weight: 800;
+  color: #2d3748;
+  font-size: 1.55rem;
+}
+
+.add-task-card .btn-link {
+  color: #4a5568;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.add-task-card .btn-link:hover {
+  color: #2b6cb0;
+  transform: translateY(-1px);
+}
+
+.add-task-card .form-control,
+.add-task-card .form-select {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(160, 174, 192, 0.35);
+  border-radius: 14px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.add-task-card .form-control:focus,
+.add-task-card .form-select:focus {
+  border-color: #F08787;
+  box-shadow: 0 0 0 0.2rem rgba(240, 135, 135, 0.18);
+  transform: translateY(-1px);
+}
+
+.add-task-card .alert-danger {
+  background: rgba(229, 62, 62, 0.12);
+  border-color: rgba(229, 62, 62, 0.2);
+  color: #742a2a;
+}
+
+.priority-selector {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.priority-btn {
+  flex: 1;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 0.85rem 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  color: #4a5568;
+}
+
+.priority-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(75, 85, 99, 0.08);
+  background: rgba(255, 255, 255, 1);
+}
+
+.priority-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(240, 135, 135, 0.16);
+}
+
+.priority-btn.active {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(240, 135, 135, 0.14);
+}
+
+.priority-btn.low.active {
+  background: rgba(235, 248, 255, 1);
+  border-color: #3182ce;
+  color: #2c5282;
+}
+
+.priority-btn.medium.active {
+  background: rgba(255, 250, 240, 1);
+  border-color: #dd6b20;
+  color: #975a16;
+}
+
+.priority-btn.high.active {
+  background: rgba(255, 245, 245, 1);
+  border-color: #e53e3e;
+  color: #972a2a;
+}
+
+.add-task-card .btn-light {
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.add-task-card .btn-light:hover {
+  transform: translateY(-1px);
+}
+
+.add-task-card .btn-primary.auth-btn {
+  background: linear-gradient(135deg, #F08787, #FEF3E2);
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 16px 32px rgba(240, 135, 135, 0.24);
+}
+
+.add-task-card .btn-primary.auth-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(240, 135, 135, 0.3);
+}
+
+.add-task-card .btn-primary.auth-btn:disabled {
+  opacity: 0.85;
+}
+
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
